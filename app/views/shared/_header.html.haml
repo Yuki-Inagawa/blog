@@ -4,11 +4,15 @@
     %ul#nav-mobile.right.hide-on-med-and-down
       - if user_signed_in?
         %li
+          %a(href="")
+          %a{:href => "/users/#{current_user.id}"} 
+            = current_user.name
+        %li
           = link_to "ログアウト", destroy_user_session_path, method: :delete
         %li
           %a(href="/articles/new") 新規投稿
       - else
         %li
-          %a{:href => "/users/sign_in"} サインイン
+          %a{:href => "/users/sign_in"} ログイン
         %li
           %a(href="/users/sign_up")新規登録  
