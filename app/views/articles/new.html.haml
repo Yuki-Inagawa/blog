@@ -1,10 +1,4 @@
-.row
-  %form.col.s12
-    .row
-      .input-field.col.s6
-        %input#input_text{"data-length" => "10", :type => "text"}/
-        %label{:for => "input_text"} タイトル
-    .row
-      .input-field.col.s12
-        %textarea#textarea1.materialize-textarea{"data-length" => "120"}
-        %label{:for => "textarea1"} 本文
+= form_for [@article] do |f|
+  = f.label :content, "本文"
+  = f.text_field :content
+  = f.submit  "Send"
