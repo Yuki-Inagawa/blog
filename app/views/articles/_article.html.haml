@@ -8,4 +8,10 @@
         %p
           = article.content
       .card-action
-        %a{:href => "#"} リンク
+        - if user_signed_in? && current_user.id == article.user_id
+          %a(href="/articles/#{article.id}/edit") 編集
+          = link_to "削除", "/articles/#{article.id}", method: :delete
+
+    
+          
+                
