@@ -1,1 +1,2 @@
-記事一覧
+- @articles.each do |article|
+  = render partial: "article", locals: { article: article }
