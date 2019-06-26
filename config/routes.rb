@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get   'users/:id'   =>  'users#show'
 
   resources :users, only: [:edit, :update]
-  resources :articles, only: [:index, :new, :create, :edit, :show, :update]
+  resources :articles, only: [:index, :new, :create, :edit, :show, :update, :destroy]
 end
